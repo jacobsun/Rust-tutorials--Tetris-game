@@ -3,9 +3,6 @@ name = "tetris"
 version = "0.1.0"
 authors = ["sunreal <jacob.sun.meta@gmail.com>"]
 edition = "2018"
-[[bin]]
-name = "draft"
-path = "src/draft.rs"
 
 [dependencies]
 piston_window = "0.85.0"

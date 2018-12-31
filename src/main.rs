@@ -95,7 +95,9 @@ fn main() {
         });
         e.update(|arg| {
             wait_time += arg.dt;
-
+            if operation == Operation::Clear {
+                wait_time = MOVE_PERIOD + 1.0f64;
+            }
             if wait_time > MOVE_PERIOD {
                 match operation {
                     Operation::Move => tetris.move_piece((0, 1), &mut operation),
@@ -325,7 +327,7 @@ impl Tetris {
 
         let mut index = *(lines.last().unwrap());
         loop {
-            if index == 0 {
+            if index < lines.len() {
                 break;
             }
             self.board[index] = self.board[index - lines.len()];

@@ -1,1 +1,1 @@
-# Rust tutorials Tetris game
+# Rust Tetris game
